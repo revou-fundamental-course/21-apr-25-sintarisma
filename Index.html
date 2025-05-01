@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-COmpatible" content="Ie=Edge">
+    <meta name="viewpart" content="width=device-width, initial-scale=1.0">
+    <title> RevoU Konversi Suhu </title>
+    <link rel="stylesheet" href="css\style.css">
+</head>
+    <body>
+        <main>
+            <h1 id="header-id">Konversi Suhu</h1>
+            <section class = "section-content">
+                <!--Deskripsi Awal-->
+                <p>Masukkan suhu Celcius (&deg;C) ke kotak dibawah, lalu klik tombol Konversi untuk mendapatkan hasil konversi dalam bentuk Fahrenheit (&deg;F)</p>
+            </section>
+        
+            <!--Form Konversi-->
+            <form id="form-degree">
+                <div class="section-item" id="form-celcius">
+                    <label for="celcius">Celcius (&deg;C) :</label>
+                </div>
+
+                <div class="section-item">
+                    <input id="inputCelcius"></input>
+                </div>
+
+                <!--Form Perhitungan-->
+                <div class="section-item" id="form-action">
+                    <button type="button" onclick = "KonversiButton()"; class ="btn-1">Konversi</button>
+                    <button type="button" onclick = "ResetButton()"; class ="btn-2">Reset</button>
+                    <button type="button" onclick = "ReverseButton()"; class ="btn-3">Reverse</button>
+                </div>
+
+                <!--Hasil Hitung-->
+                <section class = "section-content">
+                    <div id ="form-fahreinheit">
+                    <label for="hasil-input">Fahrenheit (&deg;F) :</label>
+                    </div>
+
+                    <div>
+                        <input id="inputFahrenheit" readonly></input>
+                    </div>
+                </section>
+
+                 <!--Cara Hitung-->
+                <section class = "section-content">
+                    <div>
+                        <label for="kalkulasi"> Cara Kalkulasi: </label>
+                    </div>
+
+                    <div>
+                        <textarea id="carakalkulasi" readonly></textarea>
+                    </div>
+                </section>
+            </form>
+           
+            <!-- Info akhir-->
+            <section>
+                <hr />
+                <header>
+                    <h1> Cara Konversi Dari Celcius (&deg;C) ke Fahrenheit (&deg;F)</h1> 
+                </header>
+
+                <hr />
+
+                <!--Info Perhitungan-->
+                <article>
+                    <p>Suhu <span class="rumus">S</span> dalam derajat Fahrenheit (&deg;F)</p>
+
+                    <!--Rumus C ke F-->
+                    <div class="rumus">
+                        S<sub>(&deg;F)</sub> = (S<sub>(&deg;C)</sub> x 9/5) + 32
+                    </div>
+                    
+                    <div>atau</div>
+
+                    <div class="rumus">
+                        S<sub>(&deg;F)</sub> = (S<sub>(&deg;C)</sub> x 1,8) + 32
+                    </div> 
+                </article>
+
+                <hr />
+                <header>
+                    <h1> Cara Konversi Dari Fahrenheit (&deg;F) ke Celcius (&deg;C)</h1> 
+                </header>
+                <hr />
+
+                <article>
+                    <p>Suhu <span class="rumus">S</span> dalam derajat Celcius (&deg;C)</p>
+
+                    <!--Rumus F ke C-->
+                    <div class="rumus">
+                        S<sub>(&deg;C)</sub> = (S<sub>(&deg;F)</sub> - 32) x 5/9
+                    </div>
+                    
+                    <div>atau</div>
+
+                    <div class="rumus">
+                        S<sub>(&deg;C)</sub> = (S<sub>(&deg;F)</sub> -32) / 1,8
+                    </div> 
+                </article>
+            </section>
+        </main>
+        
+        <!--Footer-->
+        <footer>
+            <p>&copy; 2025 SintaR. All right reserved.</p>
+        </footer>
+
+        <!--JS eksternal-->
+        <script src="js/script.js"></script>
+    </body>
+</html>
