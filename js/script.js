@@ -1,38 +1,44 @@
-const Cval = document.getElementById("inputCelcius");
-const Fval = document.getElementById("inputFahrenheit");
-const CK = document.getElementById("carakalkulasi");
-const frmdeg = document.getElementById("form-degree");
-const Cfrm = document.getElementById("form-celcius");
-const Ffrm = document.getElementById("form-fahreinheit");
-const Deg = "celcius";
+var cVal = document.getElementById("inputCelcius");
+var fVal = document.getElementById("inputFahrenheit");
+var frmdeg = document.getElementById("form-degree");
+var cFrm = document.getElementById("form-celcius");
+var fFrm = document.getElementById("form-fahreinheit");
+var frmKalkulasi = document.getElementById("form-kalkulasi");
+var btnAction = document.getElementById("form-action");
+var carakalkulasi = document.getElementById("carakalkulasi") ;
+var Deg = "celcius";
 
-
-// function validateForm() {
-//     console.log(Cval.value);
-//     if(inputCelcius.value === ""){
-//     ///placeholder notif
-//     inputCelcius.placeholder = "Angka tidak boleh kosong";
-//     } else {
-//         KonversiButton();
-//     }
-// }
 
     //Konversi Button// 
 function KonversiButton() {
-    var result = 0;
-    result =  (Cval.value * 9/5) + 32;
-    Fval.placeholder = result;
-    console.log(result); 
-    CK.value= "(" + Cval.value + " * 9/5) + 32";
+    
+    if (Deg == "celcius"){
+        if (cVal.value === ""){
+            alert ("masukkan angka!");
+        } else{
+            var result = 0;
+            result =  (cVal.value * 9/5) + 32;
+            fVal.value = result;
+            carakalkulasi.value= "(" + cVal.value + " * 9/5) + 32";
+        }
+    } else {
+        if (fVal.value === ""){
+            alert ("masukkan angka!");
+        } else {
+            var result = 0;
+            result =  (fVal.value - 32) * 5/9;
+            cVal.value = result;
+            carakalkulasi.value= "(" + fVal.value + " -32 ) * 5/9";
+        }
+    }
 }
 
     //Reset Button//
 function ResetButton() {
     result = 0;
-    Fval.value = "";
-    CK.value= "";
-    Cval.value = "";
-    console.log(Fval); 
+    fVal.value = "";
+    carakalkulasi.value= "";
+    cVal.value = ""; 
 }
 
     //Reverse Button//
@@ -40,38 +46,26 @@ function ReverseButton() {
     if (Deg == "celcius") {
         Deg = "fahrenheit";
         
-        frmdeg.removeChild(Cfrm);
-        frmdeg.removeChild(Ffrm);
+        cVal.disabled = true;
+        fVal.disabled = false;
 
-        frmdeg.insertBefore(Cform);
-        frmdeg.insertBefore(Fform);
+        frmdeg.removeChild(cFrm);
+        frmdeg.removeChild(fFrm);
 
-        console.log (frmdeg);
+        frmdeg.insertBefore(fFrm, btnAction);
+        frmdeg.insertBefore(cFrm, frmKalkulasi);
 
     } else {
         Deg = "celcius";
        
-        frmdeg.removeChild(Cform);
-        frmdeg.removeChild(Fform);
+        cVal.disabled = false;
+        fVal.disabled = true;
 
-        frmdeg.insertBefore(Cform);
-        frmdeg.insertBefore(Fform);
+        frmdeg.removeChild(cFrm);
+        frmdeg.removeChild(fFrm);
+
+        frmdeg.insertBefore(cFrm, btnAction);
+        frmdeg.insertBefore(fFrm, frmKalkulasi);
     }
 }
 
-
-
-
-// if (Deg == true) {
-//     Flbl = Clbl.value
-//     Clbl = Flbl.value
-//     Deg = false;
-//     console.log(Flbf); 
-//     console.log(Clbf); 
-// } else {
-//     Flbl = Clbl.value
-//     Clbl = Flbl.value
-//     Deg = true;
-//     console.log(Flbf); 
-//     console.log(Clbf); 
-// }

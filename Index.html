@@ -19,40 +19,31 @@
             <form id="form-degree">
                 <div class="section-item" id="form-celcius">
                     <label for="celcius">Celcius (&deg;C) :</label>
-                </div>
-
-                <div class="section-item">
                     <input id="inputCelcius"></input>
                 </div>
 
                 <!--Form Perhitungan-->
                 <div class="section-item" id="form-action">
-                    <button type="button" onclick = "KonversiButton()"; class ="btn-1">Konversi</button>
-                    <button type="button" onclick = "ResetButton()"; class ="btn-2">Reset</button>
-                    <button type="button" onclick = "ReverseButton()"; class ="btn-3">Reverse</button>
+                    <button type="button" id="konversi" onclick = "KonversiButton()"; class ="btn-1">Konversi</button>
+                    <button type="button" id="reset" onclick = "ResetButton()"; class ="btn-2">Reset</button>
+                    <button type="button" id="reverse" onclick = "ReverseButton()"; class ="btn-3">Reverse</button>
                 </div>
 
                 <!--Hasil Hitung-->
-                <section class = "section-content">
+                <!-- <section class = "section-content"> -->
                     <div id ="form-fahreinheit">
-                    <label for="hasil-input">Fahrenheit (&deg;F) :</label>
+                        <label for="hasil-input">Fahrenheit (&deg;F) :</label>
+                        <input id="inputFahrenheit" disabled></input>
                     </div>
-
-                    <div>
-                        <input id="inputFahrenheit" readonly></input>
-                    </div>
-                </section>
+                <!-- </section> -->
 
                  <!--Cara Hitung-->
-                <section class = "section-content">
-                    <div>
+                <!-- <section class = "section-item" id=""> -->
+                    <div class="section-item" id="form-kalkulasi">
                         <label for="kalkulasi"> Cara Kalkulasi: </label>
+                        <input id="carakalkulasi" disabled></input>
                     </div>
-
-                    <div>
-                        <textarea id="carakalkulasi" readonly></textarea>
-                    </div>
-                </section>
+                <!-- </section> -->
             </form>
            
             <!-- Info akhir-->
